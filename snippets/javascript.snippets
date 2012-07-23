@@ -1,0 +1,24 @@
+# Function
+snippet func
+	var ${1:function_name} = function ${2:function_name}(${3:argument}) {
+		${4:// body...}
+	};
+#DESCRIBE
+snippet de
+	describe("${1}", function() {
+		${2}
+	});
+#BeforeEach
+snippet be
+	beforeEach(function() {
+		${1}
+	});
+#IT
+snippet it
+	it("${1}", function() {
+		${2}
+	});
+snippet DPt
+	DP.time("${1:label}",function() {
+		
+	});
