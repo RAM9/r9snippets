@@ -1,0 +1,40 @@
+
+snippet installCodeListing
+	\usepackage{color}
+	\usepackage{xcolor}
+	\usepackage{calc}
+	\newlength\captionLeftDimension
+	\newlength\captionRightDimension
+	\setlength\captionLeftDimension{ \fboxsep+(\fboxrule*3)}
+	\setlength\captionRightDimension{-\fboxsep+(\fboxrule*3)}
+	\usepackage{listings}
+
+	\lstset{frame=single,
+			frameround=fttf,
+			xleftmargin=\captionLeftDimension,
+			rulecolor=\color{gray},
+			xrightmargin=\captionRightDimension}
+	\usepackage{caption}
+	\DeclareCaptionFont{white}{\color{white}}
+	\DeclareCaptionFormat{listing}{\parbox{\textwidth}{\colorbox{gray}{\parbox{\textwidth}{#1#2#3}}\vskip+1pt}}
+	\captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white}
+
+
+snippet code
+	\begin{lstlisting}[label=${1:label},
+					   caption=${2:caption}]
+		% code here
+		${3}
+	\end{lstlisting}
+
+snippet fighere
+	% this uses \usepackage{float}
+	\begin{figure}[H]
+	\begin{center}
+		\includegraphics[height=0.5\textwidth]{${1:relative_path}}
+	\end{center}
+	\caption{${2:caption}}
+	\end{figure}
+
+
+	
